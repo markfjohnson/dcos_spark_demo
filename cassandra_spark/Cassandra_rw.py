@@ -7,6 +7,7 @@ from pyspark.sql import SparkSession
 from pyspark import SparkConf
 from pyspark.sql import SQLContext
 
+cassandra_url='node-0.cassandra.mesos'
 KEYSPACE="dcos_example"
 TABLE_NAME="sample_table"
 
@@ -18,7 +19,7 @@ spark = SparkSession.builder \
     .getOrCreate()
 
 
-cluster = Cluster(['node-0.cassandra.mesos'])  # provide contact points and port
+cluster = Cluster([cassandra_url])  # provide contact points and port
 
 # Verify Tables and Keyspaces exist for data if not then create it
 session = cluster.connect()
