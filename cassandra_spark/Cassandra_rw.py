@@ -8,7 +8,7 @@ from pyspark import SparkConf
 from pyspark.sql import SQLContext
 
 cassandra_url = 'node-0.cassandra.mesos'
-cassandra_url = 'localhost'
+#cassandra_url = 'localhost'
 KEYSPACE="dcos_example"
 TABLE_NAME="sample_table"
 
