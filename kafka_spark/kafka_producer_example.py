@@ -15,10 +15,10 @@ def acked(err, msg):
 
 p = KafkaProducer(bootstrap_servers=kafka_url)
 
+iter_count = 0
+
 while True:
-    p.send(topic_name, b"test")
-    p.send(topic_name, b"\xc2Hola, mundo!")
-    print("Posted msg")
+    p.send(topic_name, b"test message - {}".format(iter_count))
     time.sleep(1)
 
 p.flush(30)
