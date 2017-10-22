@@ -1,0 +1,1 @@
+dcos spark run --submit-args="--conf spark.eventLog.enabled=true --conf spark.eventLog.dir=hdfs://hdfs/history https://downloads.mesosphere.com/spark/examples/pi.py 30" --name=/spark --verbose
