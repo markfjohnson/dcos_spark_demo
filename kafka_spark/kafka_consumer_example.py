@@ -1,9 +1,11 @@
 from kafka import KafkaConsumer
 
+print("Start of Kafka consumer program")
 
 #kafka_url = "localhost:9092"
-kafka_url = "broker.kafka.l4lb.thisdcos.directory:9092"
+#kafka_url = "broker.kafka.l4lb.thisdcos.directory:9092"
 kafka_url = "broker-0.kafka.mesos:9843"
+
 topic_name = "example_topic"
 
 print("Connecting to {}".format(kafka_url))

@@ -26,5 +26,6 @@ while True:
     print msg
     p.send(topic_name, msg)
     time.sleep(1)
+    iter_count = iter_count + 1
 
 p.flush(30)
