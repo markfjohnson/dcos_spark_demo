@@ -1,4 +1,4 @@
-rom cassandra.cluster import Cluster
+from cassandra.cluster import Cluster
 from cassandra import ConsistencyLevel
 from cassandra.query import *
 
@@ -25,7 +25,7 @@ cluster = Cluster([cassandra_url])  # provide contact points and port
 # Verify Tables and Keyspaces exist for data if not then create it
 session = cluster.connect()
 
-session.execute("CREATE KEYSPACE {} IF NOT EXISTS WITH replication = { 'class': 'SimpleStrategy', 'replication_factor': '2' }".format( KEYSPACE))
+session.execute("CREATE KEYSPACE IF NOT EXISTS {} WITH REPLICATION = { 'class' : 'NetworkTopologyStrategy', 'datacenter1' : 3 }; ".format(KEYSPACE))
 
 session.execute("USE {};".format(KEYSPACE))
 session.execute("CREATE TABLE IF NOT EXISTS {} ( user_id timeuuid PRIMARY KEY, added_date timestamp, first_name text, last_name text, email text);".format(TABLE_NAME))
