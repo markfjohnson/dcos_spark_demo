@@ -29,6 +29,7 @@ dcos package install --yes marathon-lb
 dcos package install --yes hdfs
 dcos package install --yes cassandra
 dcos package install --yes kafka
+dcos package install --yes elastic
 
 # Setup HDFS for Spark-history
 # spark run --submit-args="XXX GitHub reference for spark setup HDFS history options"
