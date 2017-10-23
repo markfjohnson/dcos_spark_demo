@@ -4,7 +4,7 @@
 
 
 # Create users and Roles
-dcos package install --cli dcos-enterprise-cli
+dcos package install --yes --cli dcos-enterprise-cli
 dcos security org groups create data_sci
 dcos security org groups create fin_analytics
 
@@ -24,18 +24,20 @@ dcos security org groups add_user fin_analytics edward
 
 
 # 
-dcos package install --yes spark --options=spark-dispatcher-options.json
+#dcos package install --yes spark --options=spark-dispatcher-options.json
+dcos package install --yes spark
 dcos package install --yes --cli spark
 dcos package install --yes marathon-lb
 dcos package install --yes hdfs
 dcos package install --yes --cli hdfs
 dcos package install --yes cassandra
 dcos package install --yes --cli cassandra
-dcos package install --yes beta-kafka
-dcos package install --yes --cli beta-kafka
+dcos package install --yes kafka
+dcos package install --yes --cli kafka
 dcos package install --yes elastic
 dcos package install --yes --cli elastic
 dcos package install --yes zeppelin
+dcos package install --yes postgresql --options=postgres_options.json
 
 # Setup HDFS for Spark-history
 # spark run --submit-args="XXX GitHub reference for spark setup HDFS history options"
