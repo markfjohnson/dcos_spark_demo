@@ -6,5 +6,7 @@ spark = SparkSession.builder.appName("SparkSessionHDFSExample").config("spark.sq
 
 sc = spark.sparkContext
 values = sc.parallelize(range(1,1000))
-values.saveAsTextFile("/testfile")
+values.saveAsTextFile("hdfs://testfile")
+
+#inp_file = sc.textFile("hdfs://")
 print("Done")
