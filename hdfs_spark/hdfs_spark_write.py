@@ -6,4 +6,4 @@ spark = SparkSession.builder.appName("SparkSessionHDFSExample").config("spark.sq
 
 sc = spark.sparkContext
 values = sc.parallelize(range(1,1000))
-spark.saveAsTextFile("/testfile")
+values.saveAsTextFile("/testfile")
