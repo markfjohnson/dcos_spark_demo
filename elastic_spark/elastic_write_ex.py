@@ -1,7 +1,7 @@
 import elasticsearch
 
 elastic_url = 'coordinator-0-node.elastic.autoip.dcos.thisdcos.directory'
-elastic_url = 'localhost'
+#elastic_url = 'localhost'
 elastic_port = 1025
 
 print('Connecting to Elastic Search url={}, port={}'.format(elastic_url,elastic_port))
