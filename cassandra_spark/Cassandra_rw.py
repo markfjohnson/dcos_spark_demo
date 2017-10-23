@@ -5,8 +5,6 @@ from pyspark.sql import SparkSession
 cassandra_url = 'node.cassandra.l4lb.thisdcos.directory'
 #cassandra_url = 'localhost'
 
-sc = SparkContext(appName="PySpark Cassandra File Write Example")
-
 spark = SparkSession.builder \
     .appName("PySpark Cassandra Read Write Example") \
     .config("spark.sql.crossJoin.enabled", "true") \
