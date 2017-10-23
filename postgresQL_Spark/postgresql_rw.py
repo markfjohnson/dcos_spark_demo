@@ -3,7 +3,7 @@ import sys
 from psycopg2.extensions import ISOLATION_LEVEL_AUTOCOMMIT
 
 con = None
-host = "34.215.42.192"
+host = "54.70.177.30"
 psql_port = "15432"
 
 try:
