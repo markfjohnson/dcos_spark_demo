@@ -3,8 +3,6 @@
 from kafka import KafkaProducer
 import time
 
-#kafka_url = "broker.kafka.l4lb.thisdcos.directory:9092"
-#kafka_url = "localhost:9092"
 kafka_url = ["kafka-0-broker.kafka.autoip.dcos.thisdcos.directory:1025","kafka-1-broker.kafka.autoip.dcos.thisdcos.directory:1025", "kafka-2-broker.kafka.autoip.dcos.thisdcos.directory:1025"]
 topic_name = "example_topic"
 
