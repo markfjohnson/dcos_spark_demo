@@ -3,8 +3,9 @@
 from kafka import KafkaProducer
 import time
 
-kafka_url = "broker.kafka.l4lb.thisdcos.directory:9092"
+#kafka_url = "broker.kafka.l4lb.thisdcos.directory:9092"
 #kafka_url = "localhost:9092"
+kafka_url = ["kafka-0-broker.kafka.autoip.dcos.thisdcos.directory:1025","kafka-1-broker.kafka.autoip.dcos.thisdcos.directory:1025", "kafka-2-broker.kafka.autoip.dcos.thisdcos.directory:1025"]
 topic_name = "example_topic"
 
 p = KafkaProducer(bootstrap_servers=kafka_url,api_version=(0,10))
@@ -18,4 +19,3 @@ while True:
     time.sleep(1)
     iter_count = iter_count + 1
 
-p.flush(30)
